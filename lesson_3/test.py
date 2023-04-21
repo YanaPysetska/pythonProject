@@ -93,8 +93,8 @@
 # print(auto.pop()) # убирает последний элемент
 # print(auto)
 # поиск элемента списка в списке
-# auto=['BMW', 'Subaru', 'Audi', [1,2,334]]
-# print(auto[3][2])
+auto=['BMW', 'Subaru', 'Audi', [1,2,334]]
+print(auto[3][2])
 #добавить список в список
 # auto=['BMW', 'Subaru', 'Audi', [1,2,334]]
 # print(auto.append(['Shcoda', 'Lol']))
@@ -119,4 +119,4 @@
 # print(type(my_tuple_2))
 
 #посчитать кол-во элементов
-print(my_tuple_2.count())
+# print(my_tuple_2.count())
