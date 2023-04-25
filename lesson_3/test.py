@@ -73,9 +73,9 @@
 # print(len(my_list))
 
 # #сделать из слова список
-# my_string='hello'
-# my_list=list(my_string)
-# print(my_list)
+my_string='hello'
+my_list=list(my_string)
+print(my_list)
 # #cделать из списка слова
 # auto=['BMW', 'Subaru', 'Audi']
 # print(' * '.join(auto))
