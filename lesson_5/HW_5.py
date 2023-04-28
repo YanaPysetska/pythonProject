@@ -72,7 +72,7 @@ while True:
     except FormulaError as fe:
         print('exception_1',fe.message)
     except ValueError:
-        print('ЖОПА')
+        print('ValueError')
     else:
         try:
             arifmetic_command=list_formula[1]
