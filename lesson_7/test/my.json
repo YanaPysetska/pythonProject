@@ -1,0 +1,28 @@
+{
+   "members": {
+      "count": 12,
+      "items": [
+         {
+            "name": "Molecule Man",
+            "age": 29,
+            "likes": 175,
+            "a": null,
+            "now": "05/05/23"
+         },
+         {
+            "name": "Madame Uppercut",
+            "age": 39,
+            "likes": 104,
+            "a": null,
+            "now": "05/05/23"
+         },
+         {
+            "name": "Eternal Flame",
+            "age": 1000000,
+            "likes": 154,
+            "a": null,
+            "now": "05/05/23"
+         }
+      ]
+   }
+}
