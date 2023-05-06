@@ -39,7 +39,7 @@ with open('salaries_uah.csv', 'w', newline='') as file:
 # то промежуточные результаты сериализуются в файл и при
 # повторном запуске эти пути исключаются из проверки.
 import os
-import pickle
+
 max_folders = 10000
 max_files = 10000
 
