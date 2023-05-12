@@ -340,25 +340,29 @@ import pickle
 
 #ПРИМЕР РЕКУРСИИ С ОБХОДОМ КАТАЛОГОВ И ФАЙЛОВ:
 
-F = {
-    'C:': {
-        'Python39': ['python.exe', 'python.ini'],
-        'Program Files': {
-            'Java': ['README.txt', 'Welcome.html', 'java.exe'],
-            'Matlab': ['matlab.bat', 'matlab.exe', 'mcc.bat']
-        },
-        'Windows': {
-            'System32': ['acledit.dll', 'aclui.dll', 'zopfldr.dll']
-        }
-    }
-}
-#path - ссылка на словарь depth - глубина обхода
-def get_files(path, depth=0):
-    for i in path:
-        print(""*depth, i)
-        if type(path[i])==dict:
-            get_files(path[i], depth+1)
-        else:
-            print(" "*(depth+1)," ".join(path[i]))
+# F = {
+#     'C:': {
+#         'Python39': ['python.exe', 'python.ini'],
+#         'Program Files': {
+#             'Java': ['README.txt', 'Welcome.html', 'java.exe'],
+#             'Matlab': ['matlab.bat', 'matlab.exe', 'mcc.bat']
+#         },
+#         'Windows': {
+#             'System32': ['acledit.dll', 'aclui.dll', 'zopfldr.dll']
+#         }
+#     }
+# }
+# #path - ссылка на словарь depth - глубина обхода
+# def get_files(path, depth=0):
+#     for i in path:
+#         print(""*depth, i)
+#         if type(path[i])==dict:
+#             get_files(path[i], depth+1)
+#         else:
+#             print(" "*(depth+1)," ".join(path[i]))
+#
+# get_files(F)
 
-get_files(F)
+names = ["Alice", "Bob", "Charlie"]
+name_tuples = [(name, len(name)) for name in names]
+print(name_tuples)
