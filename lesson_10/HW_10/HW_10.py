@@ -9,7 +9,11 @@ def test_time(func):
     def wrapper(*args, **kwargs):
         st = datetime.datetime.now()
         res=func(*args, **kwargs)
-        print(f'Function launched at {st} with result {res}')
+        result_string=f'Function launched at {st} with result {res}'
+
+        with open("result.txt", "a") as file:
+            file.write(result_string)
+
         return res
     return wrapper
 #функция
@@ -17,3 +21,4 @@ def test_time(func):
 def sum_all_args(*args):
     total_sum = sum(args)
     return total_sum
+
