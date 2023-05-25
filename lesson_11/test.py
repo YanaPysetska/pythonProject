@@ -57,7 +57,16 @@
 # print(student._Student__get_last_name())
 
 #Полиморфизм
-print(len('My string'))
-print(len([1,2,3,4]))
-print(len({'Name':'Joe', 'Address':'Kyiv'}))
+# print(len('My string'))
+# print(len([1,2,3,4]))
+# print(len({'Name':'Joe', 'Address':'Kyiv'}))
 
+import math
+
+def calculate_square_area(x1, y1, x2, y2):
+    side_length = math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2)
+    square_area = side_length ** 2
+    return square_area
+
+area = calculate_square_area(0, 0, 3, 3)
+print(area)  # Выводит: 9.0
