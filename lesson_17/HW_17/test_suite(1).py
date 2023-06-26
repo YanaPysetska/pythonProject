@@ -1,4 +1,3 @@
-import unittest
 import allure
 from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
@@ -6,11 +5,13 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.alert import Alert
 import time
+import pytest
+
 @allure.title("Тестирование globalsqa.com")
 @allure.description("test_customer_creation and test_customer_search")
-class TestCustomerCreation(unittest.TestCase):
+class TestCustomerCreation:
     @classmethod
-    def setUpClass(cls):
+    def setup_class(cls):
         cls.driver = webdriver.Chrome()
         cls.wait = WebDriverWait(cls.driver, 10)
         cls.driver.get("https://www.globalsqa.com/angularJs-protractor/BankingProject/#/manager/addCust")
@@ -31,7 +32,7 @@ class TestCustomerCreation(unittest.TestCase):
         alert_text = alert.text
 
         expected_alert_text = "Customer added successfully with customer id :6"
-        self.assertEqual(alert_text, expected_alert_text, f"Expected: {expected_alert_text}, Actual: {alert_text}")
+        assert alert_text == expected_alert_text, f"Expected: {expected_alert_text}, Actual: {alert_text}"
 
         alert.accept()
 
@@ -52,8 +53,9 @@ class TestCustomerCreation(unittest.TestCase):
         self.wait.until(EC.invisibility_of_element_located(record_locator))
 
     @classmethod
-    def tearDownClass(cls):
+    def teardown_class(cls):
         cls.driver.quit()
 
 if __name__ == '__main__':
-    unittest.main()
+    import pytest
+    pytest.main()

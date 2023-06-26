@@ -1,16 +1,16 @@
-import unittest
 import allure
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import time
+import pytest
 
 @allure.title("Тестирование the-internet.herokuapp.com")
 @allure.description("test_AB_Testing and test_Add_Remove_Elements")
-class TestWebsite(unittest.TestCase):
+class TestWebsite:
     @classmethod
-    def setUpClass(cls):
+    def setup_class(cls):
         cls.driver = webdriver.Chrome()
         cls.driver.implicitly_wait(10)
         cls.wait = WebDriverWait(cls.driver, 10)
@@ -24,7 +24,7 @@ class TestWebsite(unittest.TestCase):
 
         current_url = self.driver.current_url
         expected_url = "http://the-internet.herokuapp.com/abtest"
-        self.assertEqual(current_url, expected_url, f"Expected URL: {expected_url}, Actual URL: {current_url}")
+        assert current_url == expected_url, f"Expected URL: {expected_url}, Actual URL: {current_url}"
 
     def test_Add_Remove_Elements(self):
         self.driver.get("http://the-internet.herokuapp.com/add_remove_elements/")
@@ -35,8 +35,9 @@ class TestWebsite(unittest.TestCase):
         delete_button.click()
 
     @classmethod
-    def tearDownClass(cls):
+    def teardown_class(cls):
         cls.driver.quit()
 
 if __name__ == '__main__':
-    unittest.main()
+    import pytest
+    pytest.main()

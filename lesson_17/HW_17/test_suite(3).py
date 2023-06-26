@@ -1,17 +1,16 @@
-import unittest
 import allure
 from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.common.alert import Alert
 import time
+import pytest
 
 @allure.title("Тестирование uitestingplayground.com")
 @allure.description("test_text_input and test_LoadDelayext")
-class UITAP(unittest.TestCase):
+class TestUITAP:
     @classmethod
-    def setUpClass(cls):
+    def setup_class(cls):
         cls.driver = webdriver.Chrome()
         cls.wait = WebDriverWait(cls.driver, 10)
         cls.driver.get("http://uitestingplayground.com/home")
@@ -35,7 +34,7 @@ class UITAP(unittest.TestCase):
         button_name = updated_button.get_attribute("value")
 
         expected_button_name = 'Test'
-        self.assertEqual(button_name, expected_button_name, f"Expected: {expected_button_name}, Actual: {button_name}")
+        assert button_name == expected_button_name, f"Expected: {expected_button_name}, Actual: {button_name}"
 
         self.return_to_home()
 
@@ -52,8 +51,9 @@ class UITAP(unittest.TestCase):
         self.return_to_home()
 
     @classmethod
-    def tearDownClass(cls):
+    def teardown_class(cls):
         cls.driver.quit()
 
 if __name__ == '__main__':
-    unittest.main()
+    import pytest
+    pytest.main()
