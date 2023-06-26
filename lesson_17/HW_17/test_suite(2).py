@@ -1,10 +1,13 @@
 import unittest
+import allure
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import time
 
+@allure.title("Тестирование the-internet.herokuapp.com")
+@allure.description("test_AB_Testing and test_Add_Remove_Elements")
 class TestWebsite(unittest.TestCase):
     @classmethod
     def setUpClass(cls):

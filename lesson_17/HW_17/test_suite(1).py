@@ -1,10 +1,13 @@
 import unittest
+import allure
 from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.alert import Alert
 import time
+@allure.title("Тестирование globalsqa.com")
+@allure.description("test_customer_creation and test_customer_search")
 class TestCustomerCreation(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
